@@ -9,38 +9,38 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    public class StaffManager : ISubscribeService
+    public class StaffManager : IStaffService
     {
-        private readonly ISubscribeDal _subscribeDal;
+        private readonly IStaffDal _staffDal;
 
-        public StaffManager(ISubscribeDal subscribeDal)
+        public StaffManager(IStaffDal staffDal)
         {
-            _subscribeDal = subscribeDal;
+            _staffDal = staffDal;
         }
 
-        public void TDelete(Subscribe t)
+        public void TDelete(Staff t)
         {
-            _subscribeDal.Delete(t);
+            _staffDal.Delete(t);
         }
 
-        public Subscribe TGetById(int id)
+        public Staff TGetById(int id)
         {
-            return _subscribeDal.GetById(id);
+            return _staffDal.GetById(id);
         }
 
-        public List<Subscribe> TGetList()
+        public List<Staff> TGetList()
         {
-            return _subscribeDal.GetList();
+            return _staffDal.GetList();
         }
 
-        public void TInsert(Subscribe t)
+        public void TInsert(Staff t)
         {
-            _subscribeDal.Insert(t);
+            _staffDal.Insert(t);
         }
 
-        public void TUpdate(Subscribe t)
+        public void TUpdate(Staff t)
         {
-           _subscribeDal.Update(t);
+            _staffDal.Update(t);
         }
     }
 }
