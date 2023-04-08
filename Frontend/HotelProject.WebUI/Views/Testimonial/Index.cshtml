@@ -1,4 +1,4 @@
-﻿@model List<StaffViewModel>
+﻿@model List<TestimonialViewModel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -7,8 +7,9 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
-        <th>Personel Adı</th>
-        <th>Personel Ünvan</th>
+        <th>Referans Adı</th>
+        <th>Referans Görsel</th>
+        <th>Referans Ünvan</th>
         <th>Sil</th>
         <th>Güncelle</th>
         <th>Detaylar</th>
@@ -16,15 +17,17 @@
     @foreach (var item in Model)
     {
         <tr>
-            <th>@item.StaffID</th>
+            <th>@item.TestimonialID</th>
             <td>@item.Name</td>
+            <td>@item.Image</td>
             <td>@item.Title</td>
-            <td><a href="/Staff/DeleteStaff/@item.StaffID" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Staff/UpdateStaff/@item.StaffID" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="/Staff/DeleteStaff/@item.TestimonialID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Staff/UpdateStaff/@item.TestimonialID" class="btn btn-outline-success">Güncelle</a></td>
             <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
         </tr>
-        
+
     }
 </table>
 <a href="/Staff/AddStaff" class="btn btn-outline-info">Yeni Personel Girişi</a>
+
 
